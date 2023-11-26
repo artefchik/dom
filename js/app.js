@@ -69,8 +69,6 @@ setInterval(watch, 1000);
 
 if (dataCalculator.length) {
     const calculator = document.querySelector('.calculator');
-
-    console.log(dataCalculator);
     let total = [];
     if (calculator) {
         const listCalculator = calculator.querySelector('.list-calculator');
@@ -98,7 +96,7 @@ if (dataCalculator.length) {
                 const price = itemInData.price;
                 const sumOutput = item.querySelector('.list-calculator__sum');
                 const sumValue = Number(valueInput) * price;
-                itemInData.sum = Number(valueInput) * price;
+                itemInData.sum = sumValue;
                 console.log(itemInData);
                 sumOutput.textContent = sumValue;
                 totalOutput.textContent = sum(dataCalculator);
