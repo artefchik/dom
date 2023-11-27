@@ -89,15 +89,13 @@ if (dataCalculator.length) {
             const targetItem = event.target;
             if (targetItem.closest('.list-calculator__input')) {
                 const valueInput = targetItem.value ? targetItem.value : 0;
-                console.log(valueInput);
-                const itemId = targetItem.parentElement.dataset.id;
-                const item = calculator.querySelector(`[data-id="${itemId}"]`);
+                const item = targetItem.parentElement;
+                const itemId = item.dataset.id;
                 const itemInData = dataCalculator.find((elem) => elem.id === itemId);
                 const price = itemInData.price;
                 const sumOutput = item.querySelector('.list-calculator__sum');
                 const sumValue = Number(valueInput) * price;
                 itemInData.sum = sumValue;
-                console.log(itemInData);
                 sumOutput.textContent = sumValue;
                 totalOutput.textContent = sum(dataCalculator);
             }
